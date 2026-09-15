@@ -70,47 +70,47 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
     - `delete` removes the task and throws `TaskNotFoundException` if missing; all write methods `@Transactional`
     - _Requirements: 2.1, 3.1, 3.2, 5.1, 5.2, 5.3, 6.1, 6.2, 6.3, 7.1, 7.2_
 
-  - [ ]* 5.5 Write property test: write-then-read round trip
+  - [x] 5.5 Write property test: write-then-read round trip
     - **Property 1: Write-then-read round trip preserves values** (jqwik, tries >= 100)
     - **Validates: Requirements 1.1, 3.1, 4.1, 4.2**
 
-  - [ ]* 5.6 Write property test: omitted optional fields take defaults
+  - [x] 5.6 Write property test: omitted optional fields take defaults
     - **Property 2: Omitted optional fields take their defaults** (jqwik, tries >= 100)
     - **Validates: Requirements 1.2, 1.3, 1.4, 4.3**
 
-  - [ ]* 5.7 Write property test: title non-blank and within 1–150 after trimming
+  - [x] 5.7 Write property test: title non-blank and within 1–150 after trimming
     - **Property 3: Title must be non-blank and within 1–150 characters after trimming** (jqwik, tries >= 100)
     - **Validates: Requirements 1.5, 1.6, 4.5, 4.6**
 
-  - [ ]* 5.8 Write property test: description length bound
+  - [x] 5.8 Write property test: description length bound
     - **Property 4: Description must not exceed 2000 characters** (jqwik, tries >= 100)
     - **Validates: Requirements 1.7, 4.7**
 
-  - [ ]* 5.9 Write property test: rejected write does not change stored state
+  - [x] 5.9 Write property test: rejected write does not change stored state
     - **Property 6: A rejected or invalid write does not change stored state** (jqwik, tries >= 100)
     - **Validates: Requirements 1.10, 5.4, 6.4, 8.11**
 
-  - [ ]* 5.10 Write property test: targeted updates change only their target field
+  - [x] 5.10 Write property test: targeted updates change only their target field
     - **Property 7: Targeted updates change only their target field** (jqwik, tries >= 100)
     - **Validates: Requirements 5.1, 5.2, 6.1, 6.2**
 
-  - [ ]* 5.11 Write property test: operations on absent id return not-found
+  - [x] 5.11 Write property test: operations on absent id return not-found
     - **Property 8: Operations on an absent id return 404** (jqwik, tries >= 100)
     - **Validates: Requirements 3.2, 4.4, 5.3, 6.3, 7.2**
 
-  - [ ]* 5.12 Write property test: delete makes a task absent
+  - [x] 5.12 Write property test: delete makes a task absent
     - **Property 9: Delete makes a task absent** (jqwik, tries >= 100)
     - **Validates: Requirements 7.1**
 
-  - [ ]* 5.13 Write property test: listing returns all tasks in ascending id order
+  - [x] 5.13 Write property test: listing returns all tasks in ascending id order
     - **Property 10: Listing returns all tasks ordered by ascending id** (jqwik, tries >= 100)
     - **Validates: Requirements 2.1, 2.2**
 
-  - [ ]* 5.14 Write property test: every task view includes all five fields
+  - [x] 5.14 Write property test: every task view includes all five fields
     - **Property 11: Every task view includes all five fields** (jqwik, tries >= 100)
     - **Validates: Requirements 2.3, 3.1**
 
-  - [ ]* 5.15 Write unit tests for defaulting, trimming, and not-found
+  - [x] 5.15 Write unit tests for defaulting, trimming, and not-found
     - Concrete examples for defaulting/trimming; `TaskNotFoundException` thrown for missing ids; entity→`TaskResponse` mapping
     - _Requirements: 1.2, 1.3, 1.4, 1.6, 3.2_
 

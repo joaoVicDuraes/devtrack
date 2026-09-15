@@ -151,6 +151,138 @@
         "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
         "timestamp": 1789483370823
       }
+    ],
+    "5.5 Write property test: write-then-read round trip": [
+      {
+        "executionId": "193946ec-9aed-4c46-909f-ed46556c4698",
+        "chatSessionId": "sess_118ac79a-3d29-449e-9497-8b89295d5336",
+        "timestamp": 1789483660102
+      },
+      {
+        "executionId": "193946ec-9aed-4c46-909f-ed46556c4698",
+        "chatSessionId": "sess_118ac79a-3d29-449e-9497-8b89295d5336",
+        "timestamp": 1789483862796
+      }
+    ],
+    "5.6 Write property test: omitted optional fields take defaults": [
+      {
+        "executionId": "349d5a42-bf7a-4779-b4cd-5179dc711cf3",
+        "chatSessionId": "sess_f307f154-3d9b-40c0-aeee-b9fe31208063",
+        "timestamp": 1789484340383
+      },
+      {
+        "executionId": "349d5a42-bf7a-4779-b4cd-5179dc711cf3",
+        "chatSessionId": "sess_f307f154-3d9b-40c0-aeee-b9fe31208063",
+        "timestamp": 1789484482118
+      }
+    ],
+    "5.7 Write property test: title non-blank and within 1–150 after trimming": [
+      {
+        "executionId": "060d6c8e-92d4-4f6c-b0f7-3d0e630d54da",
+        "chatSessionId": "sess_60261845-9176-47b0-91f5-b718197b079c",
+        "timestamp": 1789484597127
+      },
+      {
+        "executionId": "060d6c8e-92d4-4f6c-b0f7-3d0e630d54da",
+        "chatSessionId": "sess_60261845-9176-47b0-91f5-b718197b079c",
+        "timestamp": 1789484736302
+      }
+    ],
+    "5.8 Write property test: description length bound": [
+      {
+        "executionId": "58ef16b9-6101-477d-b560-734aa48cabf4",
+        "chatSessionId": "sess_c9fc3106-f12c-4b03-b861-431155a37a34",
+        "timestamp": 1789484779444
+      },
+      {
+        "executionId": "58ef16b9-6101-477d-b560-734aa48cabf4",
+        "chatSessionId": "sess_c9fc3106-f12c-4b03-b861-431155a37a34",
+        "timestamp": 1789484979121
+      }
+    ],
+    "5.9 Write property test: rejected write does not change stored state": [
+      {
+        "executionId": "b13457d3-be16-4bad-beb5-1ba0b9f879e9",
+        "chatSessionId": "sess_73941153-9ca9-47c9-b793-1f12a9c53632",
+        "timestamp": 1789485015939
+      },
+      {
+        "executionId": "b13457d3-be16-4bad-beb5-1ba0b9f879e9",
+        "chatSessionId": "sess_73941153-9ca9-47c9-b793-1f12a9c53632",
+        "timestamp": 1789485208849
+      }
+    ],
+    "5.10 Write property test: targeted updates change only their target field": [
+      {
+        "executionId": "bed3c20b-38a6-47d1-b213-657bad5c82cc",
+        "chatSessionId": "sess_a7440e8e-fb07-418e-a21f-5eea2feff259",
+        "timestamp": 1789485262694
+      },
+      {
+        "executionId": "bed3c20b-38a6-47d1-b213-657bad5c82cc",
+        "chatSessionId": "sess_a7440e8e-fb07-418e-a21f-5eea2feff259",
+        "timestamp": 1789485409028
+      }
+    ],
+    "5.11 Write property test: operations on absent id return not-found": [
+      {
+        "executionId": "61a2df1f-9503-4a0e-af6a-aed02ea3f454",
+        "chatSessionId": "sess_8f7b1184-921b-47c0-9609-b51903718383",
+        "timestamp": 1789485452378
+      },
+      {
+        "executionId": "61a2df1f-9503-4a0e-af6a-aed02ea3f454",
+        "chatSessionId": "sess_8f7b1184-921b-47c0-9609-b51903718383",
+        "timestamp": 1789485764423
+      }
+    ],
+    "5.12 Write property test: delete makes a task absent": [
+      {
+        "executionId": "666d0bf5-98ba-4c89-b971-f54f448446ee",
+        "chatSessionId": "sess_a91a148e-a7c7-4a3a-8a58-4046417d629c",
+        "timestamp": 1789485884691
+      },
+      {
+        "executionId": "666d0bf5-98ba-4c89-b971-f54f448446ee",
+        "chatSessionId": "sess_a91a148e-a7c7-4a3a-8a58-4046417d629c",
+        "timestamp": 1789486069156
+      }
+    ],
+    "5.13 Write property test: listing returns all tasks in ascending id order": [
+      {
+        "executionId": "3bf9c1ad-611f-4616-957b-f8861545cdcc",
+        "chatSessionId": "sess_c6090918-4f22-4540-949d-96adf6fc2848",
+        "timestamp": 1789486111707
+      },
+      {
+        "executionId": "3bf9c1ad-611f-4616-957b-f8861545cdcc",
+        "chatSessionId": "sess_c6090918-4f22-4540-949d-96adf6fc2848",
+        "timestamp": 1789486309245
+      }
+    ],
+    "5.14 Write property test: every task view includes all five fields": [
+      {
+        "executionId": "8f642782-215d-4b01-8225-dd021cea2539",
+        "chatSessionId": "sess_0900c735-7115-4306-bd02-9639ad9e19a0",
+        "timestamp": 1789486371494
+      },
+      {
+        "executionId": "8f642782-215d-4b01-8225-dd021cea2539",
+        "chatSessionId": "sess_0900c735-7115-4306-bd02-9639ad9e19a0",
+        "timestamp": 1789486597573
+      }
+    ],
+    "5.15 Write unit tests for defaulting, trimming, and not-found": [
+      {
+        "executionId": "78a8df5e-ae74-4d37-ae8e-ec32739cad78",
+        "chatSessionId": "sess_84f410a8-3896-4679-a11c-780781e51723",
+        "timestamp": 1789486623423
+      },
+      {
+        "executionId": "78a8df5e-ae74-4d37-ae8e-ec32739cad78",
+        "chatSessionId": "sess_84f410a8-3896-4679-a11c-780781e51723",
+        "timestamp": 1789486855675
+      }
     ]
   }
 }
