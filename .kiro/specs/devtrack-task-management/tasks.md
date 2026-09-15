@@ -114,22 +114,22 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
     - Concrete examples for defaulting/trimming; `TaskNotFoundException` thrown for missing ids; entity→`TaskResponse` mapping
     - _Requirements: 1.2, 1.3, 1.4, 1.6, 3.2_
 
-- [ ] 6. Checkpoint - Ensure service tests pass
+- [x] 6. Checkpoint - Ensure service tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 7. Implement the TaskController (REST endpoints)
-  - [ ] 7.1 Create TaskController with all endpoints
+- [x] 7. Implement the TaskController (REST endpoints)
+  - [x] 7.1 Create TaskController with all endpoints
     - `POST /tasks` (201) with `@Valid CreateTaskRequest`; `GET /tasks` (200); `GET /tasks/{id}` (200)
     - `PUT /tasks/{id}` (200) with `@Valid UpdateTaskRequest`; `PATCH /tasks/{id}/status` (200) with `@Valid ChangeStatusRequest`; `PATCH /tasks/{id}/priority` (200) with `@Valid ChangePriorityRequest`
     - `DELETE /tasks/{id}` (204); delegate every operation to `TaskService`; never touch the repository
     - _Requirements: 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 8.2, 8.5_
 
-  - [ ]* 7.2 Write @WebMvcTest tests for the HTTP contract
+  - [x] 7.2 Write @WebMvcTest tests for the HTTP contract
     - Correct status codes per endpoint (201/200/204); validation failure returns 400 and the mocked service is never called (8.5); malformed/missing body → 400; malformed path id `/tasks/abc` → 400; invalid enum in body → 400 (spot-check Property 5); `Authorization` header behaves identically to no header
     - _Requirements: 1.11, 3.3, 5.4, 6.4, 7.3, 8.5, 10.1, 10.2_
 
 - [ ] 8. Implement the GlobalExceptionHandler
-  - [ ] 8.1 Create @RestControllerAdvice mapping exceptions to ErrorResponse
+  - [~] 8.1 Create @RestControllerAdvice mapping exceptions to ErrorResponse
     - `MethodArgumentNotValidException` → 400 listing every failed field + reason
     - `HttpMessageNotReadableException` (malformed body / invalid enum) → 400 generic parse message
     - `MethodArgumentTypeMismatchException` (malformed path id) → 400 generic invalid-identifier message
@@ -149,18 +149,18 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
     - Confirm `TaskRepository` persists and reads back a task; listing returns strictly ascending-id order with representative cases
     - _Requirements: 8.6, 2.1_
 
-- [ ] 10. Checkpoint - Ensure all backend tests pass
+- [~] 10. Checkpoint - Ensure all backend tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ### Frontend
 
-- [ ] 11. Scaffold the Vite React project
+- [~] 11. Scaffold the Vite React project
   - Create a Vite React (JavaScript) project with `package.json`, entry `main.jsx`, and `index.html`
   - Add a testing setup (Vitest + React Testing Library + jsdom) for component and module tests
   - _Requirements: 9.12, 10.3, 10.4_
 
 - [ ] 12. Implement the taskApi.js network module
-  - [ ] 12.1 Create src/api/taskApi.js with all HTTP calls
+  - [~] 12.1 Create src/api/taskApi.js with all HTTP calls
     - Functions: `listTasks`, `getTask`, `createTask`, `updateTask`, `changeStatus`, `changePriority`, `deleteTask` using `fetch`
     - Normalize non-2xx responses into thrown errors (parse the `ErrorResponse` body when present)
     - _Requirements: 9.11_
@@ -170,25 +170,25 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
     - _Requirements: 9.11_
 
 - [ ] 13. Implement reusable enum controls
-  - [ ] 13.1 Create StatusControl and PriorityControl dropdown components
+  - [~] 13.1 Create StatusControl and PriorityControl dropdown components
     - Small functional components rendering the enum options; report selection via a callback
     - _Requirements: 9.7, 9.8, 9.12_
 
 - [ ] 14. Implement TaskForm, TaskItem, and TaskList
-  - [ ] 14.1 Create TaskForm with client-side title trim/validation
+  - [~] 14.1 Create TaskForm with client-side title trim/validation
     - Create/edit form; trim the title and block submission with an inline message if empty/whitespace, without calling the API
     - _Requirements: 9.4, 9.5, 9.6, 9.12_
 
-  - [ ] 14.2 Create TaskItem row with status/priority/delete actions
+  - [~] 14.2 Create TaskItem row with status/priority/delete actions
     - Render title, status, priority; embed `StatusControl`/`PriorityControl`; expose delete with confirmation
     - _Requirements: 9.1, 9.7, 9.8, 9.9, 9.12_
 
-  - [ ] 14.3 Create TaskList with list and empty state
+  - [~] 14.3 Create TaskList with list and empty state
     - Render a `TaskItem` per task; show "No tasks yet" and no rows when the list is empty
     - _Requirements: 9.1, 9.2, 9.12_
 
 - [ ] 15. Implement App.jsx and wire the frontend together
-  - [ ] 15.1 Create App.jsx orchestrating state and mutations
+  - [~] 15.1 Create App.jsx orchestrating state and mutations
     - Hold task list, `loading`, and `error` state; call `taskApi` on load and for each mutation
     - Handle loading, empty, and error UI states; on the list request failing show a failure message and no rows; on a mutation error show the message but keep the prior list unchanged
     - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.6, 9.7, 9.8, 9.9, 9.10_
@@ -197,7 +197,7 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
     - Empty state renders the "no tasks" message and no rows; list error renders the failure message; a failed mutation keeps the prior list; `TaskForm` blocks a blank/whitespace title with an inline message without calling the API
     - _Requirements: 9.2, 9.3, 9.5, 9.10_
 
-- [ ] 16. Final checkpoint - Ensure all tests pass
+- [~] 16. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

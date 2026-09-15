@@ -283,6 +283,129 @@
         "chatSessionId": "sess_84f410a8-3896-4679-a11c-780781e51723",
         "timestamp": 1789486855675
       }
+    ],
+    "6. Checkpoint - Ensure service tests pass": [
+      {
+        "executionId": "3e044580-aaec-4d05-baf0-ee7b07cd4e73",
+        "chatSessionId": "sess_97af6631-760d-47da-a9b1-25f42ec0c3b7",
+        "timestamp": 1789486934279
+      },
+      {
+        "executionId": "3e044580-aaec-4d05-baf0-ee7b07cd4e73",
+        "chatSessionId": "sess_97af6631-760d-47da-a9b1-25f42ec0c3b7",
+        "timestamp": 1789487083986
+      }
+    ],
+    "7.1 Create TaskController with all endpoints": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487137758
+      },
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487193660
+      },
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487427471
+      }
+    ],
+    "7.2 Write @WebMvcTest tests for the HTTP contract": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487137912
+      },
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487431253
+      },
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487618589
+      }
+    ],
+    "8.1 Create @RestControllerAdvice mapping exceptions to ErrorResponse": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138017
+      }
+    ],
+    "10. Checkpoint - Ensure all backend tests pass": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138136
+      }
+    ],
+    "11. Scaffold the Vite React project": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138268
+      }
+    ],
+    "12.1 Create src/api/taskApi.js with all HTTP calls": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138347
+      }
+    ],
+    "13.1 Create StatusControl and PriorityControl dropdown components": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138422
+      }
+    ],
+    "14.1 Create TaskForm with client-side title trim/validation": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138501
+      }
+    ],
+    "14.2 Create TaskItem row with status/priority/delete actions": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138590
+      }
+    ],
+    "14.3 Create TaskList with list and empty state": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138666
+      }
+    ],
+    "15.1 Create App.jsx orchestrating state and mutations": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138744
+      }
+    ],
+    "16. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487138821
+      }
+    ],
+    "7. Implement the TaskController (REST endpoints)": [
+      {
+        "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
+        "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
+        "timestamp": 1789487618732
+      }
     ]
   }
 }
