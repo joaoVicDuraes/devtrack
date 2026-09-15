@@ -31,7 +31,7 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
     - Getters/setters (or builder)
     - _Requirements: 1.2, 1.3, 1.4_
 
-- [ ] 3. Create the TaskRepository
+- [x] 3. Create the TaskRepository
   - Define `TaskRepository extends JpaRepository<Task, Long>`
   - Add a method returning all tasks ordered by ascending id (e.g. `findAllByOrderByIdAsc()`)
   - _Requirements: 8.6, 2.1_
