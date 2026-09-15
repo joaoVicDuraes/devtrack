@@ -60,6 +60,97 @@
         "chatSessionId": "sess_f31ba81d-83af-4289-8552-fa96e34cb91a",
         "timestamp": 1789480303495
       }
+    ],
+    "4. Define request/response DTOs as records with validation": [
+      {
+        "executionId": "0ec9f7cd-3c17-412a-b482-7ade9d03c789",
+        "chatSessionId": "sess_dd55fd31-ad45-4198-b205-9ac385509841",
+        "timestamp": 1789481253517
+      },
+      {
+        "executionId": "0ec9f7cd-3c17-412a-b482-7ade9d03c789",
+        "chatSessionId": "sess_dd55fd31-ad45-4198-b205-9ac385509841",
+        "timestamp": 1789481399664
+      }
+    ],
+    "4.1 Create request DTOs": [
+      {
+        "executionId": "d98776bc-b63a-4aa1-99f0-f4776806c4f5",
+        "chatSessionId": "sess_dd5436be-6cb5-4935-a94b-5be07aba8d4c",
+        "timestamp": 1789481460142
+      },
+      {
+        "executionId": "d98776bc-b63a-4aa1-99f0-f4776806c4f5",
+        "chatSessionId": "sess_dd5436be-6cb5-4935-a94b-5be07aba8d4c",
+        "timestamp": 1789482108516
+      }
+    ],
+    "4.2 Create response DTOs": [
+      {
+        "executionId": "df9e673b-8ae1-4fce-a747-fa5be4a57dbe",
+        "chatSessionId": "sess_0d05621e-8f40-4605-ac1a-f74cc980db64",
+        "timestamp": 1789482143766
+      },
+      {
+        "executionId": "df9e673b-8ae1-4fce-a747-fa5be4a57dbe",
+        "chatSessionId": "sess_0d05621e-8f40-4605-ac1a-f74cc980db64",
+        "timestamp": 1789482213005
+      }
+    ],
+    "5.1 Create the TaskService interface and TaskNotFoundException": [
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789482504426
+      },
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789482824466
+      }
+    ],
+    "5.2 Implement entity <-> DTO mapping": [
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789482829906
+      },
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789482988720
+      }
+    ],
+    "5.3 Implement create and full-edit logic with defaulting and title trimming": [
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789482992176
+      },
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789483161939
+      }
+    ],
+    "5.4 Implement listAll, getById, changeStatus, changePriority, and delete": [
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789483165461
+      },
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789483370722
+      }
+    ],
+    "5. Implement the TaskService (business rules)": [
+      {
+        "executionId": "aa30710d-efd4-463d-aa85-006125d30e66",
+        "chatSessionId": "sess_65bf555d-0d95-4ccc-a51a-eff5cf84a616",
+        "timestamp": 1789483370823
+      }
     ]
   }
 }

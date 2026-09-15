@@ -36,35 +36,35 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
   - Add a method returning all tasks ordered by ascending id (e.g. `findAllByOrderByIdAsc()`)
   - _Requirements: 8.6, 2.1_
 
-- [ ] 4. Define request/response DTOs as records with validation
-  - [ ] 4.1 Create request DTOs
+- [x] 4. Define request/response DTOs as records with validation
+  - [x] 4.1 Create request DTOs
     - `CreateTaskRequest` and `UpdateTaskRequest` records: `title` (`@NotBlank`, `@Size(max=150)`), `description` (`@Size(max=2000)`), nullable `status`, nullable `priority`
     - `ChangeStatusRequest` record: `status` (`@NotNull`)
     - `ChangePriorityRequest` record: `priority` (`@NotNull`)
     - _Requirements: 8.4, 1.5, 1.6, 1.7, 4.5, 4.6, 4.7, 5.4, 6.4_
 
-  - [ ] 4.2 Create response DTOs
+  - [x] 4.2 Create response DTOs
     - `TaskResponse` record (id, title, description, status, priority)
     - `ErrorResponse` record (status, message, `List<FieldError>`) with nested `FieldError(field, message)` record
     - _Requirements: 8.4, 2.3, 3.1, 8.7_
 
-- [ ] 5. Implement the TaskService (business rules)
-  - [ ] 5.1 Create the TaskService interface and TaskNotFoundException
+- [x] 5. Implement the TaskService (business rules)
+  - [x] 5.1 Create the TaskService interface and TaskNotFoundException
     - Interface methods: `create`, `listAll`, `getById`, `update`, `changeStatus`, `changePriority`, `delete`
     - Custom `TaskNotFoundException` for missing ids
     - _Requirements: 8.1, 8.3, 8.4_
 
-  - [ ] 5.2 Implement entity <-> DTO mapping
+  - [x] 5.2 Implement entity <-> DTO mapping
     - Map `Task` entity to `TaskResponse`; apply request values to the entity
     - _Requirements: 8.4, 2.3, 3.1, 11 (via 2.3/3.1 field completeness)_
 
-  - [ ] 5.3 Implement create and full-edit logic with defaulting and title trimming
+  - [x] 5.3 Implement create and full-edit logic with defaulting and title trimming
     - `@Transactional`; trim title and validate trimmed length is 1–150; reject blank/over-length as a validation error
     - Default omitted status→TODO, priority→MEDIUM, description→`""`
     - Full edit replaces all four fields (applying the same defaulting); throw `TaskNotFoundException` if id missing
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 8.11_
 
-  - [ ] 5.4 Implement listAll, getById, changeStatus, changePriority, and delete
+  - [x] 5.4 Implement listAll, getById, changeStatus, changePriority, and delete
     - `listAll` returns ascending-id order; `getById` throws if missing
     - `changeStatus` updates only status; `changePriority` updates only priority; both preserve other fields and throw if missing
     - `delete` removes the task and throws `TaskNotFoundException` if missing; all write methods `@Transactional`

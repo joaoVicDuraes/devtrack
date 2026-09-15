@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Backend Tests on Java Change",
+      "trigger": "PostToolUse",
+      "description": "When the agent modifies a backend Java source file, run the backend Maven tests (using the Maven wrapper if available) and report any test failures. Does not modify code on failure.",
+      "matcher": "fs_write|str_replace|fs_append",
+      "action": {
+        "type": "command",
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$ErrorActionPreference='Stop'; $raw=[Console]::In.ReadToEnd(); if (-not ($raw -match 'backend[\\\\/].*\\.java')) { Write-Output 'No backend Java file modified; skipping backend tests.'; exit 0 }; $backend='c:\\devtrack\\backend'; if (Test-Path (Join-Path $backend 'mvnw.cmd')) { $cmd = Join-Path $backend 'mvnw.cmd' } else { $cmd = 'mvn' }; Write-Output ('Backend Java file changed. Running: ' + $cmd + ' test'); & $cmd -f (Join-Path $backend 'pom.xml') test; $code=$LASTEXITCODE; if ($code -ne 0) { Write-Error ('Backend Maven tests FAILED (exit ' + $code + '). Review the test output above; do not auto-modify unrelated code to make tests pass.'); exit $code }; Write-Output 'Backend Maven tests passed.'; exit 0\"",
+        "timeout": 600
+      }
+    }
+  ]
+}
