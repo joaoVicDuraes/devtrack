@@ -1,0 +1,33 @@
+# ===================================================================
+# .gitignore da raiz do DevTrack
+#
+# Regra geral: versionamos CÓDIGO-FONTE e configuração, nunca
+# dependências baixáveis, artefatos de build ou ferramentas locais.
+# Essas coisas são reinstaladas/reconstruídas a partir do código.
+# ===================================================================
+
+# --- JDK / runtimes commitados por engano ---
+# Um JDK inteiro (centenas de MB) nunca deve ir para o repositório;
+# ele deve ser instalado na máquina, não versionado. Esta pasta foi
+# adicionada sem querer e estourou o limite de 100 MB do GitHub.
+.kiro/specs/**/oracleJdk-21/
+**/oracleJdk-21/
+**/jdk-*/
+**/oracleJdk*/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+*.local
+
+# --- Java / Maven (backend) ---
+target/
+
+# --- Logs e temporários ---
+*.log
+boot.log
+*.tmp
+
+# --- Arquivos de sistema / editor ---
+.DS_Store
+Thumbs.db
