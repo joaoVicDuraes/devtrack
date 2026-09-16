@@ -128,76 +128,76 @@ Each task is incremental and builds on the previous ones, ending with wiring so 
     - Correct status codes per endpoint (201/200/204); validation failure returns 400 and the mocked service is never called (8.5); malformed/missing body → 400; malformed path id `/tasks/abc` → 400; invalid enum in body → 400 (spot-check Property 5); `Authorization` header behaves identically to no header
     - _Requirements: 1.11, 3.3, 5.4, 6.4, 7.3, 8.5, 10.1, 10.2_
 
-- [ ] 8. Implement the GlobalExceptionHandler
-  - [~] 8.1 Create @RestControllerAdvice mapping exceptions to ErrorResponse
+- [x] 8. Implement the GlobalExceptionHandler
+  - [x] 8.1 Create @RestControllerAdvice mapping exceptions to ErrorResponse
     - `MethodArgumentNotValidException` → 400 listing every failed field + reason
     - `HttpMessageNotReadableException` (malformed body / invalid enum) → 400 generic parse message
     - `MethodArgumentTypeMismatchException` (malformed path id) → 400 generic invalid-identifier message
     - `TaskNotFoundException` → 404; `DataAccessException` → 500 generic message; expose no stack traces or internal class names
     - _Requirements: 8.7, 8.8, 8.9, 8.10, 1.11, 3.2, 3.3, 4.4, 5.3, 6.3, 7.2, 7.3_
 
-  - [ ]* 8.2 Write property test: a validation error reports every failed field
+  - [x] 8.2 Write property test: a validation error reports every failed field
     - **Property 12: A validation error reports every failed field** (jqwik, tries >= 100)
     - **Validates: Requirements 8.7, 8.9**
 
-  - [ ]* 8.3 Write @WebMvcTest tests for error mapping
+  - [x] 8.3 Write @WebMvcTest tests for error mapping
     - Multi-field validation error lists all fields (complements Property 12); persistence failure (mock service throws `DataAccessException`) → 500 generic body; invalid enum → 400
     - _Requirements: 8.7, 8.9, 8.10, 5.4, 6.4_
 
-- [ ] 9. Wire persistence end to end
-  - [ ]* 9.1 Write @DataJpaTest integration test for persistence and ordering
+- [x] 9. Wire persistence end to end
+  - [x] 9.1 Write @DataJpaTest integration test for persistence and ordering
     - Confirm `TaskRepository` persists and reads back a task; listing returns strictly ascending-id order with representative cases
     - _Requirements: 8.6, 2.1_
 
-- [~] 10. Checkpoint - Ensure all backend tests pass
+- [x] 10. Checkpoint - Ensure all backend tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ### Frontend
 
-- [~] 11. Scaffold the Vite React project
+- [x] 11. Scaffold the Vite React project
   - Create a Vite React (JavaScript) project with `package.json`, entry `main.jsx`, and `index.html`
   - Add a testing setup (Vitest + React Testing Library + jsdom) for component and module tests
   - _Requirements: 9.12, 10.3, 10.4_
 
-- [ ] 12. Implement the taskApi.js network module
-  - [~] 12.1 Create src/api/taskApi.js with all HTTP calls
+- [x] 12. Implement the taskApi.js network module
+  - [x] 12.1 Create src/api/taskApi.js with all HTTP calls
     - Functions: `listTasks`, `getTask`, `createTask`, `updateTask`, `changeStatus`, `changePriority`, `deleteTask` using `fetch`
     - Normalize non-2xx responses into thrown errors (parse the `ErrorResponse` body when present)
     - _Requirements: 9.11_
 
-  - [ ]* 12.2 Write taskApi.js module tests with fetch mocked
+  - [x] 12.2 Write taskApi.js module tests with fetch mocked
     - Each function calls the expected URL/method; non-2xx responses become thrown errors
     - _Requirements: 9.11_
 
-- [ ] 13. Implement reusable enum controls
-  - [~] 13.1 Create StatusControl and PriorityControl dropdown components
+- [x] 13. Implement reusable enum controls
+  - [x] 13.1 Create StatusControl and PriorityControl dropdown components
     - Small functional components rendering the enum options; report selection via a callback
     - _Requirements: 9.7, 9.8, 9.12_
 
-- [ ] 14. Implement TaskForm, TaskItem, and TaskList
-  - [~] 14.1 Create TaskForm with client-side title trim/validation
+- [x] 14. Implement TaskForm, TaskItem, and TaskList
+  - [x] 14.1 Create TaskForm with client-side title trim/validation
     - Create/edit form; trim the title and block submission with an inline message if empty/whitespace, without calling the API
     - _Requirements: 9.4, 9.5, 9.6, 9.12_
 
-  - [~] 14.2 Create TaskItem row with status/priority/delete actions
+  - [x] 14.2 Create TaskItem row with status/priority/delete actions
     - Render title, status, priority; embed `StatusControl`/`PriorityControl`; expose delete with confirmation
     - _Requirements: 9.1, 9.7, 9.8, 9.9, 9.12_
 
-  - [~] 14.3 Create TaskList with list and empty state
+  - [x] 14.3 Create TaskList with list and empty state
     - Render a `TaskItem` per task; show "No tasks yet" and no rows when the list is empty
     - _Requirements: 9.1, 9.2, 9.12_
 
-- [ ] 15. Implement App.jsx and wire the frontend together
-  - [~] 15.1 Create App.jsx orchestrating state and mutations
+- [x] 15. Implement App.jsx and wire the frontend together
+  - [x] 15.1 Create App.jsx orchestrating state and mutations
     - Hold task list, `loading`, and `error` state; call `taskApi` on load and for each mutation
     - Handle loading, empty, and error UI states; on the list request failing show a failure message and no rows; on a mutation error show the message but keep the prior list unchanged
     - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.6, 9.7, 9.8, 9.9, 9.10_
 
-  - [ ]* 15.2 Write React Testing Library component tests
+  - [x] 15.2 Write React Testing Library component tests
     - Empty state renders the "no tasks" message and no rows; list error renders the failure message; a failed mutation keeps the prior list; `TaskForm` blocks a blank/whitespace title with an inline message without calling the API
     - _Requirements: 9.2, 9.3, 9.5, 9.10_
 
-- [~] 16. Final checkpoint - Ensure all tests pass
+- [x] 16. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

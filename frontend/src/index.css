@@ -1,0 +1,456 @@
+/* ==========================================================================
+   DevTrack — global theme (plain CSS, no libraries)
+   --------------------------------------------------------------------------
+   This file styles the whole app. It is intentionally organized top-down:
+     1. Design tokens (CSS custom properties) in :root
+     2. A small reset + base element styles
+     3. Layout (app container + header)
+     4. The form "card" and its fields
+     5. Buttons (primary / secondary / danger)
+     6. The task list and task rows
+     7. Status / priority badges
+     8. Feedback states (errors, loading, empty)
+     9. Responsive tweaks
+
+   WHY custom properties (variables) in :root:
+   :root is the top of the document, so anything declared there is available to
+   every selector below via var(...). Keeping colors/spacing in one place means a
+   palette change is a one-line edit instead of hunting through the file. This is
+   the CSS equivalent of the shared enum constants used in the JS code.
+   ========================================================================== */
+
+:root {
+  /* --- Color palette ------------------------------------------------------
+     Indigo primary with neutral grays for text/borders, and semantic colors
+     (green / amber / red) reused by the status + priority badges. */
+  --color-primary: #4f46e5;        /* indigo-600 — main brand/action color   */
+  --color-primary-hover: #4338ca;  /* indigo-700 — darker, for :hover        */
+  --color-primary-ring: rgba(79, 70, 229, 0.35); /* focus outline glow       */
+
+  --color-bg: #f4f5f7;             /* page background: barely-there gray      */
+  --color-surface: #ffffff;        /* cards/rows sit on white                 */
+  --color-border: #e2e5ea;         /* subtle 1px separators                   */
+
+  --color-text: #1f2430;           /* primary text (near-black, softer)       */
+  --color-text-muted: #6b7280;     /* secondary/labels/help text              */
+
+  /* Semantic colors — used both for badges and feedback states. Each has a
+     strong "solid" tone (text/border) and a soft tint (background). */
+  --color-success: #15803d;
+  --color-success-soft: #dcfce7;
+  --color-warning: #b45309;
+  --color-warning-soft: #fef3c7;
+  --color-danger: #b91c1c;
+  --color-danger-soft: #fee2e2;
+  --color-info: #1d4ed8;
+  --color-info-soft: #dbeafe;
+  --color-neutral: #4b5563;
+  --color-neutral-soft: #eef0f3;
+
+  /* --- Spacing scale ------------------------------------------------------
+     A small, consistent scale keeps vertical rhythm even. Multiples of ~4px. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  /* --- Shape + elevation --------------------------------------------------- */
+  --radius: 10px;        /* cards / inputs                                    */
+  --radius-sm: 6px;      /* buttons / badges                                  */
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-hover: 0 4px 12px rgba(16, 24, 40, 0.12);
+
+  --max-width: 720px;    /* content column width                             */
+}
+
+/* ==========================================================================
+   1. Reset + base
+   --------------------------------------------------------------------------
+   A minimal reset: border-box makes width/padding math predictable (padding no
+   longer inflates the declared width), and zeroing body margin removes the
+   browser's default 8px gutter so our own layout is in full control.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* System font stack: use whatever native UI font the OS provides. This looks
+     "native", loads instantly (no web font request), and needs no dependency. */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. Layout — app container + header
+   ========================================================================== */
+
+/* The app is a centered column. margin-inline: auto centers a block that has a
+   max-width; the padding gives breathing room on small screens. */
+.app {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.app__header {
+  margin-bottom: var(--space-5);
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  /* A subtle indigo accent bar under the title ties the header to the brand. */
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: var(--space-2);
+  display: inline-block;
+}
+
+/* ==========================================================================
+   3. Form card + fields
+   --------------------------------------------------------------------------
+   The create/edit form is presented as a "card": a white surface lifted off the
+   gray page with a subtle border + shadow and rounded corners.
+   ========================================================================== */
+
+.task-form-section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.task-form-section h2 {
+  margin: 0 0 var(--space-4);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Space out the form's field groups. Each field lives in a <div> in TaskForm,
+   so a direct-child gap gives even vertical rhythm without per-field margins. */
+.task-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Labels: readable, slightly muted, sitting just above their control. */
+.task-form-section label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* Inputs / textarea / selects share one look. Element selectors keep the JSX
+   clean (no className needed on every field) — the tokens do the theming. */
+.task-form-section input[type="text"],
+.task-form-section textarea,
+.task-form-section select {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.task-form-section textarea {
+  min-height: 84px;
+  resize: vertical;
+}
+
+/* Visible focus is an accessibility must: a colored ring (box-shadow) plus a
+   primary border makes the focused field obvious for keyboard users. */
+.task-form-section input[type="text"]:focus,
+.task-form-section textarea:focus,
+.task-form-section select:focus,
+.control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+
+/* ==========================================================================
+   4. Buttons
+   --------------------------------------------------------------------------
+   Base .btn defines shape/typography; modifier classes set the color scheme.
+   The bare <button> in the form (the submit button) inherits the primary look
+   via the element selector below so we don't have to touch that JSX.
+   ========================================================================== */
+
+.btn,
+.task-form-section button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Primary (submit / Add / Save): solid indigo, white text. */
+.btn--primary,
+.task-form-section button[type="submit"] {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover,
+.task-form-section button[type="submit"]:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Secondary (Cancel / Edit): outline style, quiet until hovered. */
+.btn--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-info-soft);
+}
+
+/* Danger (Delete): red outline that fills on hover to signal a destructive act. */
+.btn--danger {
+  background-color: var(--color-surface);
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.btn--danger:hover {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+
+/* Disabled state for every button: dim + not-allowed cursor, no hover feedback. */
+.btn:disabled,
+.task-form-section button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Focus ring for buttons (keyboard accessibility). */
+.btn:focus-visible,
+.task-form-section button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+
+/* ==========================================================================
+   5. Task list + rows
+   --------------------------------------------------------------------------
+   The <ul class="task-list"> and its <li>s are required by the tests, so we
+   strip the browser's default list bullets/padding and lay the rows out as a
+   vertical stack of cards.
+   ========================================================================== */
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Each TaskItem root (<div class="task-item">) is a card row. flex + wrap lets
+   the title sit on the left and the controls/buttons on the right, wrapping to
+   a new line only when the row gets too narrow. */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3) var(--space-4);
+  transition: box-shadow 0.15s ease;
+}
+
+.task-item:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Left group: title + badges. min-width:0 lets a long title truncate/wrap
+   instead of forcing the row wider than its container. */
+.task-item__main {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.task-item__title {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Right group: the two dropdowns + Edit/Delete buttons, centered vertically. */
+.task-item__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* The compact dropdowns inside a task row (StatusControl/PriorityControl). */
+.control {
+  padding: var(--space-1) var(--space-2);
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* ==========================================================================
+   6. Badges (status + priority)
+   --------------------------------------------------------------------------
+   Small colored pills that show the current status/priority at a glance next to
+   the title. The dropdowns still change the value — the badge is just a visual
+   summary. Modifier classes are keyed to the enum values (e.g. IN_PROGRESS).
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 999px; /* fully rounded "pill" */
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* Status colors: TODO neutral, IN_PROGRESS amber, DONE green. */
+.badge--status-TODO {
+  color: var(--color-neutral);
+  background-color: var(--color-neutral-soft);
+}
+.badge--status-IN_PROGRESS {
+  color: var(--color-warning);
+  background-color: var(--color-warning-soft);
+}
+.badge--status-DONE {
+  color: var(--color-success);
+  background-color: var(--color-success-soft);
+}
+
+/* Priority colors: LOW neutral/green, MEDIUM amber, HIGH red. */
+.badge--priority-LOW {
+  color: var(--color-success);
+  background-color: var(--color-success-soft);
+}
+.badge--priority-MEDIUM {
+  color: var(--color-warning);
+  background-color: var(--color-warning-soft);
+}
+.badge--priority-HIGH {
+  color: var(--color-danger);
+  background-color: var(--color-danger-soft);
+}
+
+/* ==========================================================================
+   7. Feedback states — errors, loading, empty, inline validation
+   ========================================================================== */
+
+/* Error alerts (load failure + failed mutation) look like a warning banner:
+   soft red fill, red border/text, rounded. Both classes share the look. */
+.load-error,
+.action-error {
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-danger);
+  background-color: var(--color-danger-soft);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+/* Loading indicator: deliberately quiet/muted so it doesn't shout. */
+.loading {
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: var(--space-3) 0;
+}
+
+/* Empty state ("No tasks yet"): soft, italic, centered in the content column. */
+.task-list-empty {
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+
+/* The TaskForm's inline title error (a <p role="alert"> inside the field div).
+   Scoped to the form section so it doesn't restyle the page-level alerts above. */
+.task-form-section form p[role="alert"] {
+  margin: var(--space-1) 0 0;
+  color: var(--color-danger);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   8. Responsive — narrow screens (phones)
+   --------------------------------------------------------------------------
+   Below ~600px, stack the task row vertically so the title, dropdowns, and
+   buttons each get the full width instead of cramming onto one line.
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .app {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-item__actions {
+    /* Let the controls/buttons fill the width evenly when stacked. */
+    justify-content: flex-start;
+  }
+
+  .task-item__actions .control,
+  .task-item__actions .btn {
+    flex: 1 1 auto;
+  }
+}

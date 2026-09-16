@@ -71,6 +71,20 @@
         </dependency>
 
         <!--
+            H2: an in-memory SQL database, test scope only.
+            @DataJpaTest boots a real JPA/Hibernate layer but, by convention, swaps the
+            configured MySQL datasource for a fast embedded database. H2 fills that role so the
+            persistence-wiring integration test runs without a live MySQL server. The Task entity
+            uses only portable JPA features (IDENTITY id generation, VARCHAR columns, enums stored
+            by name), so H2 exercises the same mapping the app uses against MySQL.
+        -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--
             jqwik: property-based testing engine for JUnit 5.
             Test scope only. Used later to implement Properties 1-12 from the design.
         -->

@@ -1,5 +1,10 @@
 {
-  "pbtResults": {},
+  "pbtResults": {
+    "8.2 Write property test: a validation error reports every failed field": {
+      "status": "passed",
+      "lastRunTimestamp": 1789566086414
+    }
+  },
   "executionHistory": {
     "1. Scaffold the Spring Boot Maven project": [
       {
@@ -335,6 +340,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138017
+      },
+      {
+        "executionId": "7b738a73-6caa-44b5-8377-cf1a5ad9fbc3",
+        "chatSessionId": "sess_ad4a3cfc-4199-47e1-a6c2-1eb366cc9ea1",
+        "timestamp": 1789565465813
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565923656
       }
     ],
     "10. Checkpoint - Ensure all backend tests pass": [
@@ -342,6 +357,11 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138136
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566832511
       }
     ],
     "11. Scaffold the Vite React project": [
@@ -349,6 +369,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138268
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565930493
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566189028
       }
     ],
     "12.1 Create src/api/taskApi.js with all HTTP calls": [
@@ -356,6 +386,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138347
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566255355
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566372798
       }
     ],
     "13.1 Create StatusControl and PriorityControl dropdown components": [
@@ -363,6 +403,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138422
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566256160
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566373726
       }
     ],
     "14.1 Create TaskForm with client-side title trim/validation": [
@@ -370,6 +420,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138501
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566378984
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566478554
       }
     ],
     "14.2 Create TaskItem row with status/priority/delete actions": [
@@ -377,6 +437,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138590
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566380378
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566477609
       }
     ],
     "14.3 Create TaskList with list and empty state": [
@@ -384,6 +454,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138666
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566381056
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566480463
       }
     ],
     "15.1 Create App.jsx orchestrating state and mutations": [
@@ -391,6 +471,16 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138744
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566484557
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566629612
       }
     ],
     "16. Final checkpoint - Ensure all tests pass": [
@@ -398,6 +488,11 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487138821
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566838239
       }
     ],
     "7. Implement the TaskController (REST endpoints)": [
@@ -405,6 +500,133 @@
         "executionId": "0eaaef45-1341-4c83-9d16-9a185f9dcdc8",
         "chatSessionId": "sess_c359e543-9037-4f8c-8bf4-d3f71feb8b19",
         "timestamp": 1789487618732
+      }
+    ],
+    "8.2 Write property test: a validation error reports every failed field": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565547019
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565928505
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566183401
+      }
+    ],
+    "8.3 Write @WebMvcTest tests for error mapping": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565547232
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565929878
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566184134
+      }
+    ],
+    "9.1 Write @DataJpaTest integration test for persistence and ordering": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565547418
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565576430
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565924381
+      }
+    ],
+    "12.2 Write taskApi.js module tests with fetch mocked": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565547537
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566378050
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566479670
+      }
+    ],
+    "15.2 Write React Testing Library component tests": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565547615
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566633440
+      },
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566761750
+      }
+    ],
+    "9. Wire persistence end to end": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789565924464
+      }
+    ],
+    "8. Implement the GlobalExceptionHandler": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566184241
+      }
+    ],
+    "13. Implement reusable enum controls": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566373801
+      }
+    ],
+    "12. Implement the taskApi.js network module": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566479784
+      }
+    ],
+    "14. Implement TaskForm, TaskItem, and TaskList": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566480546
+      }
+    ],
+    "15. Implement App.jsx and wire the frontend together": [
+      {
+        "executionId": "d0dd6743-8ba1-4bda-9133-2ae68f5a3068",
+        "chatSessionId": "sess_adeb3fe3-582b-427b-99e6-5d1da1165a72",
+        "timestamp": 1789566761849
       }
     ]
   }
